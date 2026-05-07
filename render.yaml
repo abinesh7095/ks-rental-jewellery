@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: ks-rental-jewellery
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    disk:
+      name: sqlite-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: DB_PATH
+        value: /data/rental.db
+      - key: NODE_ENV
+        value: production

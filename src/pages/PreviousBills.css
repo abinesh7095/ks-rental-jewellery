@@ -1,0 +1,45 @@
+.bill-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.bill-detail-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.detail-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+.bill-totals-detail {
+  margin-top: 16px;
+  background: var(--bg-surface);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.bill-totals-detail > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+}
+.bill-totals-detail > div:last-child { border-bottom: none; }
+.bill-totals-detail .balance-highlight {
+  background: var(--gold-glow);
+  color: var(--gold);
+}
+.bill-totals-detail > div span:last-child {
+  color: var(--text-primary);
+}
+.bill-totals-detail .balance-highlight span:last-child {
+  color: var(--gold);
+  font-size: 16px;
+}
