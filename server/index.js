@@ -26,13 +26,13 @@ export async function start() {
 
   // Serve static files in production
   app.use(express.static(path.join(__dirname, '../dist')));
-  
+
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../dist/index.html'));
   });
 
   return new Promise((resolve) => {
-    const server = app.listen(PORT, () => {
+    app.listen(PORT, () => {
       console.log(`🚀 Server running on http://localhost:${PORT}`);
       resolve(PORT);
     }).on('error', (err) => {
@@ -49,7 +49,4 @@ export async function start() {
   });
 }
 
-// Only start if run directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  start().catch(console.error);
-}
+start().catch(console.error);
